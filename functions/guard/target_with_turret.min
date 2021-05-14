@@ -1,0 +1,11 @@
+ubind @flare
+radar enemy any any health hail1 1 target
+jump 7 equal target null
+sensor tar_x target @x
+sensor tar_y target @y
+ucontrol approach tar_x tar_y 14 0 0
+ucontrol targetp target 1 0 0 0
+sensor move_x hail1 @x
+sensor move_y hail1 @y
+ucontrol approach move_x move_y 3 0 0
+ucontrol targetp target 0 0 0 0

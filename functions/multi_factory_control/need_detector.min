@@ -1,0 +1,16 @@
+sensor leadam kiln1 @lead
+jump 4 greaterThan leadam 1
+write 1 cell1 0
+end
+write 0 cell1 0
+sensor leadam kiln2 @lead
+jump 9 greaterThan leadam 1
+write 1 cell1 1
+end
+write 0 cell1 1
+sensor leadam kiln3 @lead
+jump 14 greaterThan leadam 1
+write 1 cell1 2
+end
+write 0 cell1 2
+

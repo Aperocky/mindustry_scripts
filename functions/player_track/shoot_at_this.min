@@ -1,0 +1,12 @@
+ubind @flare
+read x_loc cell1 0
+read y_loc cell1 1
+read shooting cell1 2
+jump 8 equal shooting true
+ucontrol approach x_loc y_loc 8 0 0
+ucontrol target x_loc y_loc 0 0 0
+end
+read shoot_x cell1 3
+read shoot_y cell1 4
+ucontrol approach shoot_x shoot_y 14 0 0
+ucontrol target shoot_x shoot_y 1 0 0

@@ -1,0 +1,15 @@
+sensor tit reconstructor1 @titanium
+sensor met reconstructor1 @metaglass
+op greaterThan tit_good tit 80
+op greaterThan met_good met 40
+op land all_good tit_good met_good
+jump 8 notEqual all_good true
+control enabled conveyor1 0 0 0 0
+end
+control enabled conveyor1 1 0 0 0
+jump 12 equal tit_good true
+control configure unloader1 @titanium 0 0 0
+end
+jump 6 equal met_good true
+control configure unloader1 @metaglass 0 0 0
+

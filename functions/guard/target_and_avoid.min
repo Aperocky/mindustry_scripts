@@ -1,0 +1,13 @@
+ubind @dagger
+uradar enemy any any distance 0 1 target
+jump 8 notEqual target null
+sensor stay_x node1 @x
+sensor stay_y node1 @y
+ucontrol approach stay_x stay_y 5 0 0
+ucontrol targetp target 0 0 0 0
+end
+sensor tar_x target @x
+sensor tar_y target @y
+ucontrol approach tar_x tar_y 19 0 0
+ucontrol targetp target 1 0 0 0
+

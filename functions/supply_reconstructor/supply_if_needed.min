@@ -1,0 +1,17 @@
+sensor sum factory1 @silicon
+op greaterThan good sum 20
+jump 4 notEqual good true
+end
+jump 6 notEqual @unit null
+ubind @flare
+sensor items @unit @totalItems
+jump 12 greaterThanEq items 1
+ulocate building core false @copper outx outy found core
+ucontrol move outx outy 0 0 0
+ucontrol itemTake core @silicon 20 0 0
+end
+sensor fac_x factory1 @x
+sensor fac_y factory1 @y
+ucontrol move fac_x fac_y 0 0 0
+ucontrol itemDrop factory1 99 0 0 0
+

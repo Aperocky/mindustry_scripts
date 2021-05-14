@@ -1,0 +1,11 @@
+ubind @alpha
+sensor x_loc @unit @x
+sensor y_loc @unit @y
+sensor shooting @unit @shooting
+sensor shoot_x @unit @shootX
+sensor shoot_y @unit @shootY
+write x_loc cell1 0
+write y_loc cell1 1
+write shooting cell1 2
+write shoot_x cell1 3
+write shoot_y cell1 4
