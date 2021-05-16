@@ -28,7 +28,7 @@ syn keyword minConstant null
 hi def link minConstant Constant
 
 " Attributes
-syn match   minAttribute "@\%(\w\)*"
+syn match   minAttribute "@\%(\w\|-\)*"
 hi def link minAttribute Identifier
 
 " Keywords

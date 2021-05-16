@@ -1,0 +1,15 @@
+ubind @flare
+sensor surge vault1 @surge-alloy
+sensor carry @unit @surge-alloy
+jump 0 greaterThan surge 800
+jump 10 equal carry 0
+sensor vx vault1 @x
+sensor vy vault1 @y
+ucontrol move vx vy 0 0 0
+ucontrol itemDrop vault1 99 0 0 0
+end
+ulocate building core false @copper outx outy found core
+ucontrol move outx outy 0 0 0
+ucontrol itemDrop core 99 0 0 0
+ucontrol itemTake core @surge-alloy 20 0 0
+
