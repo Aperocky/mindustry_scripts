@@ -1,0 +1,10 @@
+ubind @mega
+sensor health @unit @health
+sensor maxHealth @unit @maxHealth
+op div vitality health maxHealth
+jump 6 lessThan vitality 0.6
+end
+sensor x_loc node1 @x
+sensor y_loc node1 @y
+ucontrol move x_loc y_loc 0 0 0
+

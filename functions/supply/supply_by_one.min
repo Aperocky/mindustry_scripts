@@ -1,0 +1,28 @@
+ubind @mega
+sensor flag @unit @flag
+jump 0 notEqual flag 17
+sensor sil container1 @silicon
+sensor fab container1 @phase-fabric
+sensor sil_carry @unit @silicon
+sensor fab_carry @unit @phase-fabric
+sensor x_loc container1 @x
+sensor y_loc container1 @y
+op greaterThan sil_good sil 100
+op greaterThan fab_good fab 100
+op land all_good fab_good sil_good
+jump 0 equal all_good true
+jump 16 equal sil_good true
+jump 20 equal sil_carry 0
+jump 17 always sil_carry 0
+jump 20 equal fab_carry 0
+ucontrol move x_loc y_loc 0 0 0
+ucontrol itemDrop container1 99 0 0 0
+end
+ulocate building core false @copper outx outy found core
+ucontrol move outx outy 0 0 0
+ucontrol itemDrop core 99 0 0 0
+jump 26 equal sil_good true
+ucontrol itemTake core @silicon 20 0 0
+end
+ucontrol itemTake core @phase-fabric 20 0 0
+

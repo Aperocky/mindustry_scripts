@@ -1,0 +1,20 @@
+sensor heat reactor1 @heat
+jump 4 lessThan heat 0.2
+control enabled reactor1 0 0 0 0
+jump 5 always heat 0.2
+control enabled reactor1 1 0 0 0
+sensor heat reactor2 @heat
+jump 9 lessThan heat 0.2
+control enabled reactor2 0 0 0 0
+jump 10 always heat 0.2
+control enabled reactor2 1 0 0 0
+sensor heat reactor3 @heat
+jump 14 lessThan heat 0.2
+control enabled reactor3 0 0 0 0
+jump 15 always heat 0.2
+control enabled reactor3 1 0 0 0
+sensor heat reactor4 @heat
+jump 19 lessThan heat 0.2
+control enabled reactor4 0 0 0 0
+end
+control enabled reactor4 1 0 0 0

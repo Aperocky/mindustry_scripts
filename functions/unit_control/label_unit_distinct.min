@@ -1,0 +1,8 @@
+set bind 10
+ubind @mega
+sensor flag @unit @flag
+jump 1 notEqual flag 0
+ucontrol flag bind 0 0 0 0
+op add bind bind 1
+jump 1 always x false
+
