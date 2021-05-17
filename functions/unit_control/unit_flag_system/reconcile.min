@@ -1,0 +1,16 @@
+set curr_bind 10
+read exist cell1 curr_bind
+jump 6 equal exist 1
+jump 0 greaterThan curr_bind 40
+op add curr_bind curr_bind 1
+jump 1 always exist 0
+set iter 0
+ubind @antumbra
+sensor flag @unit @flag
+jump 4 equal flag curr_bind
+op add iter iter 1
+jump 13 greaterThan iter 30
+jump 7 always x false
+write 0 cell1 curr_bind
+jump 4 always x false
+

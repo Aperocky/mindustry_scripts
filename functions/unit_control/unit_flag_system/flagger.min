@@ -1,0 +1,13 @@
+set curr_bind 10
+read exist cell1 curr_bind
+jump 5 equal exist 0
+op add curr_bind curr_bind 1
+jump 1 always exist 0
+ubind @antumbra
+jump 0 equal @unit null
+sensor flag @unit @flag
+jump 5 notEqual flag 0
+ucontrol flag curr_bind 0 0 0 0
+write 1 cell1 curr_bind
+jump 0 always x false
+
