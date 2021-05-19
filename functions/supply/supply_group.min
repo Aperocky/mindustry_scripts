@@ -1,0 +1,18 @@
+ubind @flare
+sensor flag @unit @flag
+jump 0 lessThan flag 10
+jump 0 greaterThanEq flag 15
+sensor storage vault1 @titanium
+sensor carry @unit @titanium
+jump 0 greaterThan storage 900
+jump 13 equal carry 0
+sensor vx vault1 @x
+sensor vy vault1 @y
+ucontrol move vx vy 0 0 0
+ucontrol itemDrop vault1 99 0 0 0
+end
+ulocate building core false @copper outx outy found core
+ucontrol move outx outy 0 0 0
+ucontrol itemDrop core 99 0 0 0
+ucontrol itemTake core @titanium 20 0 0
+
