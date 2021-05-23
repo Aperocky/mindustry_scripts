@@ -1,14 +1,16 @@
 getlink guard 0
-ubind @flare
+ubind @quasar
 uradar enemy any any distance 0 1 target
-jump 9 notEqual target null
+jump 10 notEqual target null
 sensor stay_x guard @x
 sensor stay_y guard @y
+ucontrol boost 1 stay_y 5 0 0
 ucontrol approach stay_x stay_y 5 0 0
 ucontrol targetp target 0 0 0 0
 end
 sensor tar_x target @x
 sensor tar_y target @y
-ucontrol approach tar_x tar_y 19 0 0
+ucontrol boost 0 stay_y 5 0 0
+ucontrol approach tar_x tar_y 18 0 0
 ucontrol targetp target 1 0 0 0
 

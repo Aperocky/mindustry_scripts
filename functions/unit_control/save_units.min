@@ -1,10 +1,11 @@
+getlink target 0
 ubind @mega
 sensor health @unit @health
 sensor maxHealth @unit @maxHealth
 op div vitality health maxHealth
-jump 6 lessThan vitality 0.6
+jump 7 lessThan vitality 0.6
 end
-sensor x_loc node1 @x
-sensor y_loc node1 @y
+sensor x_loc target @x
+sensor y_loc target @y
 ucontrol move x_loc y_loc 0 0 0
 

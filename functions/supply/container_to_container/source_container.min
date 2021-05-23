@@ -1,0 +1,14 @@
+getlink target 0
+ubind @mega
+sensor flag @unit @flag
+jump 1 lessThan flag 10
+jump 1 greaterThanEq flag 25
+sensor carry @unit @silicon
+sensor storage target @silicon
+jump 1 greaterThan carry 0
+jump 1 lessThan storage 100
+sensor x_loc target @x
+sensor y_loc target @y
+ucontrol move x_loc y_loc 0 0 0
+ucontrol itemTake target @silicon 60 0 0
+

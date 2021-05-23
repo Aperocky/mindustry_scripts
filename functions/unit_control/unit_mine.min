@@ -1,0 +1,16 @@
+getlink target 0
+ubind @mega
+sensor flag @unit @flag
+jump 1 lessThan flag 10
+jump 1 greaterThanEq flag 13
+sensor coal @unit @coal
+jump 11 greaterThanEq coal 60
+ulocate ore core true @coal outx outy found building
+ucontrol approach outx outy 5 0 0
+ucontrol mine outx outy 0 0 0
+end
+sensor x target @x
+sensor y target @y
+ucontrol approach x y 5 0 0
+ucontrol itemDrop target 99 0 0 0
+
