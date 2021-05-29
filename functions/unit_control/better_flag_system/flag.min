@@ -1,0 +1,11 @@
+set cflag 10
+ubind @flare
+sensor allow switch1 @enabled
+jump 0 notEqual allow true
+sensor flag @unit @flag
+jump 1 notEqual flag 0
+ucontrol flag cflag 0 0 0 0
+write 1 cell1 cflag
+op add cflag cflag 1
+jump 1 always x false
+

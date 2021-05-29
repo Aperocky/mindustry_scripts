@@ -1,0 +1,8 @@
+ubind @zenith
+sensor carry @unit @blast-compound
+jump 0 greaterThanEq carry 60
+ulocate building core false @copper outx outy found core
+ucontrol approach outx outy 5 0 0
+ucontrol itemDrop core 999 0 0 0
+ucontrol itemTake core @blast-compound 60 0 0
+

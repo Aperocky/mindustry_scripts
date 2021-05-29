@@ -1,0 +1,19 @@
+draw clear 0 0 0 0 0 0
+set curr 10
+read exist cell1 curr
+op sub index curr 10
+op mod ix index 6
+op idiv iy index 6
+op add ix ix 1
+op add iy iy 1
+op mul xp ix 10
+op mul yp iy 10
+jump 13 greaterThan exist 0
+draw color 255 0 0 255 0 0
+jump 14 always x false
+draw color 0 255 0 255 0 0
+draw rect xp yp 8 8 0 0
+op add curr curr 1
+jump 2 lessThan curr 46
+drawflush display1
+

@@ -1,0 +1,8 @@
+sensor allow switch1 @enabled
+jump 0 notEqual allow false
+set cflag 10
+read flag cell1 cflag
+write 0 cell1 cflag
+op add cflag cflag 1
+jump 3 lessThan cflag 46
+
