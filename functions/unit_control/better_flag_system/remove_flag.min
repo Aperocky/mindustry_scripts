@@ -1,8 +1,7 @@
-ubind @flare
+ubind TYPE
 sensor allow switch1 @enabled
 jump 0 notEqual allow false
 sensor cflag @unit @flag
 jump 0 equal cflag 0
 write 0 cell1 cflag
 ucontrol flag 0 0 0 0 0
-

@@ -12,34 +12,28 @@ jump 1 greaterThan carry 0
 jump 1 lessThan storage 100
 sensor x_loc target @x
 sensor y_loc target @y
+sensor capacity @unit @itemCapacity
 ucontrol move x_loc y_loc 0 0 0
-ucontrol itemTake target @{itemType} {capacity} 0 0
+ucontrol itemTake target @{itemType} capacity 0 0
 """
 
 to_code = """
 getlink target 0
-ubind @{unit}
+ubind @flare
 sensor flag @unit @flag
-jump 1 lessThan flag {beginFlag}
-jump 1 greaterThanEq flag {endFlag}
-sensor carry @unit @{itemType}
-sensor storage target @{itemType}
+jump 1 lessThan flag 10
+jump 1 greaterThanEq flag 11
+sensor carry @unit @metaglass
+sensor storage target @metaglass
+sensor targetcap target @itemCapacity
+op sub sgoal targetcap 100
 jump 1 equal carry 0
-jump 1 greaterThan storage {storage}
+jump 1 greaterThan storage sgoal
 sensor x_loc target @x
 sensor y_loc target @y
 ucontrol move x_loc y_loc 0 0 0
-ucontrol itemDrop target 999 60 0 0
+ucontrol itemDrop target 999 0 0 0
 """
-
-UNITS = {
-    "flare": 20,
-    "horizon": 30,
-    "zenith": 80,
-    "mega": 60,
-    "mono": 20,
-    "poly": 30,
-}
 
 RESOURCES = [
     "silicon",
@@ -59,16 +53,17 @@ RESOURCES = [
     "spore-pod"
 ]
 
-def move(direction, unit, beginFlag, endFlag, itemType, storage=900):
+def move(direction, unit, beginFlag, endFlag, itemType):
     """
     mindu move (from|to) $unit $beginFlag $endFlag $itemType [storage]
     """
+    if itemType not in RESOURCES:
+        raise ValueError("Resource type does not exist")
     if not direction in ["from", "to"]:
         raise ValueError("Direction argument must be from or to")
-    capacity = UNITS[unit]
     if direction == "from":
-        code = from_code.format(unit=unit, beginFlag=beginFlag, endFlag=endFlag, itemType=itemType, capacity=capacity)
+        code = from_code.format(unit=unit, beginFlag=beginFlag, endFlag=endFlag, itemType=itemType)
     else:
-        code = to_code.format(unit=unit, beginFlag=beginFlag, endFlag=endFlag, itemType=itemType, storage=storage)
+        code = to_code.format(unit=unit, beginFlag=beginFlag, endFlag=endFlag, itemType=itemType)
     subprocess.run("pbcopy", universal_newlines=True, input=code)
 
