@@ -19,12 +19,12 @@ ucontrol itemTake target @{itemType} capacity 0 0
 
 to_code = """
 getlink target 0
-ubind @flare
+ubind @{unit}
 sensor flag @unit @flag
-jump 1 lessThan flag 10
-jump 1 greaterThanEq flag 11
-sensor carry @unit @metaglass
-sensor storage target @metaglass
+jump 1 lessThan flag {beginFlag}
+jump 1 greaterThanEq flag {endFlag}
+sensor carry @unit @{itemType}
+sensor storage target @{itemType}
 sensor targetcap target @itemCapacity
 op sub sgoal targetcap 100
 jump 1 equal carry 0
